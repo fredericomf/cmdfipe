@@ -1,16 +1,18 @@
 package com.fredericomf.cmdfipe.enums;
 
 public enum MainMenuOptions {
-    CARRO(1, "Carro", TerminalColors.GREEN), MOTO(2, "Moto", TerminalColors.GREEN),
-    CAMINHAO(3, "Caminhão", TerminalColors.GREEN), SAIR(9, "Sair", TerminalColors.RED);
+    CARRO(1, "Carro", "carros", TerminalColors.GREEN), MOTO(2, "Moto", "motos", TerminalColors.GREEN),
+    CAMINHAO(3, "Caminhão", "caminhoes", TerminalColors.GREEN), SAIR(9, "Sair", null, TerminalColors.RED);
 
     private final int id;
     private final String description;
+    private final String apiCategory;
     private final TerminalColors color;
 
-    MainMenuOptions(int value, String description, TerminalColors color) {
+    MainMenuOptions(int value, String description, String apiCategory, TerminalColors color) {
         this.id = value;
         this.description = description;
+        this.apiCategory = apiCategory;
         this.color = color;
     }
 
@@ -33,5 +35,9 @@ public enum MainMenuOptions {
 
     public TerminalColors getColor() {
         return color;
+    }
+
+    public String getApiCategory() {
+        return apiCategory;
     }
 }
