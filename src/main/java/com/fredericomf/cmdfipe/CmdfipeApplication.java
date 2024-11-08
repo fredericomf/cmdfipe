@@ -1,13 +1,22 @@
 package com.fredericomf.cmdfipe;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.fredericomf.cmdfipe.principal.Principal;
+
 @SpringBootApplication
-public class CmdfipeApplication {
+public class CmdfipeApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CmdfipeApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		Principal principal = new Principal();
+		principal.exbirMenu();
 	}
 
 }
